@@ -1,6 +1,6 @@
 package gildedRose;
 
-public class BackstagePassesItemQualityStrategy extends ItemQualityStrategy {
+class BackstagePassesItemQualityStrategy extends ItemQualityStrategy {
     @Override
     void update(Item item) {
         item.setQuality(increaseQuality(item.getQuality()));

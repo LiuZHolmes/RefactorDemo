@@ -1,6 +1,6 @@
 package gildedRose;
 
-public abstract class ItemQualityStrategy {
+abstract class ItemQualityStrategy {
 
     private final int MAX_QUALITY = 50;
     private final int MIN_QUALITY = 0;

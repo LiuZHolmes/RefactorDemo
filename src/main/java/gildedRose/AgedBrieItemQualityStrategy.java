@@ -1,6 +1,6 @@
 package gildedRose;
 
-public class AgedBrieItemQualityStrategy extends ItemQualityStrategy {
+class AgedBrieItemQualityStrategy extends ItemQualityStrategy {
     @Override
     void update(Item item) {
         item.setQuality(increaseQuality(item.getQuality()));

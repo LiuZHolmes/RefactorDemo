@@ -2,14 +2,14 @@ package gildedRose;
 
 import java.util.Arrays;
 
-public class GildedRose {
-    Item[] items;
+class GildedRose {
+    private Item[] items;
 
-    public GildedRose(Item[] items) {
+    GildedRose(Item[] items) {
         this.items = items;
     }
 
-    public void updateQuality() {
+    void updateQuality() {
         Arrays.stream(items).forEach(Item::updateQuality);
     }
 }

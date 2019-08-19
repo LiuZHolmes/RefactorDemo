@@ -1,6 +1,6 @@
 package gildedRose;
 
-public class DefaultItemQualityStrategy extends ItemQualityStrategy {
+class DefaultItemQualityStrategy extends ItemQualityStrategy {
     @Override
     void update(Item item) {
         item.setQuality(decreaseQuality(item.getQuality()));
