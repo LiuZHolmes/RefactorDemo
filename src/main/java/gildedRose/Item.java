@@ -2,16 +2,13 @@ package gildedRose;
 
 public class Item {
 
-    final int MAX_QUALITY = 50;
-    final int MIN_QUALITY = 0;
-
-    String name;
+    private String name;
 
     int sellIn;
 
     int quality;
 
-    ItemQualityStrategy itemQualityStrategy;
+    private ItemQualityStrategy itemQualityStrategy;
 
     Item(String name, int sellIn, int quality) {
         this.name = name;
@@ -19,6 +16,12 @@ public class Item {
         this.quality = quality;
         if (this.name.equals("Aged Brie")) {
             this.itemQualityStrategy = new AgedBrieItemQualityStrategy();
+        }
+        else if (this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            this.itemQualityStrategy = new BackstagePassesItemQualityStrategy();
+        }
+        else if (this.name.equals("Sulfuras, Hand of Ragnaros")) {
+            this.itemQualityStrategy = new SulfurasItemQualityStrategy();
         }
         else this.itemQualityStrategy = new DefaultItemQualityStrategy();
     }
@@ -36,25 +39,8 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    void increaseQuality() {
-        quality = quality < MAX_QUALITY ? quality + 1 : quality;
-    }
-    void decreaseQuality() {
-        quality = quality > MIN_QUALITY ? quality - 1 : quality;
-    }
 
     void calQuality() {
-        if (this.name.equals("Aged Brie")) {
-            itemQualityStrategy.update(this);
-        } else if (this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            this.increaseQuality();
-            if (this.sellIn < 11) this.increaseQuality();
-            if (this.sellIn < 6) this.increaseQuality();
-            if (--this.sellIn < 0) this.quality = 0;
-        } else if (this.name.equals("Sulfuras, Hand of Ragnaros")) {
-
-        } else {
-            itemQualityStrategy.update(this);
-        }
+        itemQualityStrategy.update(this);
     }
 }
