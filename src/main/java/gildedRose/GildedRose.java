@@ -10,6 +10,6 @@ public class GildedRose {
     }
 
     public void updateQuality() {
-        Arrays.stream(items).forEach(Item::calQuality);
+        Arrays.stream(items).forEach(Item::updateQuality);
     }
 }

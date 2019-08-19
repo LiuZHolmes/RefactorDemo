@@ -44,7 +44,7 @@ public class Item {
     }
 
 
-    void calQuality() {
+    void updateQuality() {
         itemQualityStrategy.update(this);
     }
 }
