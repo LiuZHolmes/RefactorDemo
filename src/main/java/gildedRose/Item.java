@@ -17,7 +17,10 @@ public class Item {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
-        this.itemQualityStrategy = new DefaultItemQualityStrategy();
+        if (this.name.equals("Aged Brie")) {
+            this.itemQualityStrategy = new AgedBrieItemQualityStrategy();
+        }
+        else this.itemQualityStrategy = new DefaultItemQualityStrategy();
     }
 
     public int getQuality() {
@@ -42,8 +45,7 @@ public class Item {
 
     void calQuality() {
         if (this.name.equals("Aged Brie")) {
-            this.increaseQuality();
-            if (--this.sellIn < 0) this.increaseQuality();
+            itemQualityStrategy.update(this);
         } else if (this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             this.increaseQuality();
             if (this.sellIn < 11) this.increaseQuality();
