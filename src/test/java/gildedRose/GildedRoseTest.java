@@ -174,4 +174,15 @@ public class GildedRoseTest {
 
         assertEquals(0, items[0].quality);
     }
+
+    @Test
+    public void should_return_quality_2_and_0_when_given_items_name_Aged_Brie_and_sell_in_0_and_quality_0_and_items_name_Other_and_sell_in_0_and_quality_2() {
+        Item[] items = {new Item("Aged Brie", 0, 0),new Item("Other", 0, 2)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(2, items[0].quality);
+        assertEquals(0, items[1].quality);
+    }
 }
