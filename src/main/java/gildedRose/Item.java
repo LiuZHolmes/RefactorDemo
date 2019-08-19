@@ -40,16 +40,17 @@ public class Item {
             if (this.sellIn < 0) {
                 this.quality = 0;
             }
+        } else if (this.name.equals("Sulfuras, Hand of Ragnaros")) {
+
         } else {
             if (this.quality > 0)
-                if (!this.name.equals("Sulfuras, Hand of Ragnaros")) this.quality--;
+                this.quality--;
 
-            if (!this.name.equals("Sulfuras, Hand of Ragnaros")) this.sellIn = this.sellIn - 1;
+            this.sellIn = this.sellIn - 1;
 
             if (this.sellIn < 0) {
                 if (this.quality > 0) {
-                    if (!this.name.equals("Sulfuras, Hand of Ragnaros"))
-                        this.quality--;
+                    this.quality--;
                 }
             }
         }
