@@ -36,8 +36,7 @@ public class Item {
             this.increaseQuality();
             if (this.sellIn < 11) this.increaseQuality();
             if (this.sellIn < 6) this.increaseQuality();
-            this.sellIn = this.sellIn - 1;
-            if (this.sellIn < 0) {
+            if (--this.sellIn < 0) {
                 this.quality = 0;
             }
         } else if (this.name.equals("Sulfuras, Hand of Ragnaros")) {
