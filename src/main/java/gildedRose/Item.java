@@ -20,6 +20,14 @@ public class Item {
         this.itemQualityStrategy = new DefaultItemQualityStrategy();
     }
 
+    public int getQuality() {
+        return quality;
+    }
+
+    public void setQuality(int quality) {
+        this.quality = quality;
+    }
+
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
