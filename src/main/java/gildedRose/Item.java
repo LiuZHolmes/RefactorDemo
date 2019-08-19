@@ -2,20 +2,26 @@ package gildedRose;
 
 public class Item {
 
-    public String name;
+    final int MAX_QUALITY = 50;
 
-    public int sellIn;
+    String name;
 
-    public int quality;
+    int sellIn;
 
-    public Item(String name, int sellIn, int quality) {
+    int quality;
+
+    Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
     }
 
-   @Override
-   public String toString() {
+    @Override
+    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
+    }
+
+    void increaseQuality() {
+        quality = quality < MAX_QUALITY ? quality + 1 : quality;
     }
 }
