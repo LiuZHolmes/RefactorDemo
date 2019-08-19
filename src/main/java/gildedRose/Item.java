@@ -29,7 +29,7 @@ public class Item {
         if (!this.name.equals("Aged Brie")
                 && !this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (this.quality > 0)
-                if (!this.name.equals("Sulfuras, Hand of Ragnaros")) this.quality = this.quality - 1;
+                if (!this.name.equals("Sulfuras, Hand of Ragnaros")) this.quality--;
         } else {
             this.increaseQuality();
             if (this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -45,7 +45,7 @@ public class Item {
                 if (!this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                     if (this.quality > 0) {
                         if (!this.name.equals("Sulfuras, Hand of Ragnaros"))
-                            this.quality = this.quality - 1;
+                            this.quality--;
                     }
                 } else this.quality = 0;
             } else this.increaseQuality();
