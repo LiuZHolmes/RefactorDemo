@@ -37,11 +37,9 @@ public class GildedRose {
                             }
                         }
                     } else {
-                        items[i].quality = items[i].quality - items[i].quality;
+                        items[i].quality = 0;
                     }
-                } else {
-                    items[i].increaseQuality();
-                }
+                } else items[i].increaseQuality();
             }
         }
     }
