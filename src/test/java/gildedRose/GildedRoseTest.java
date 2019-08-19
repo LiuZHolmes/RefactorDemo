@@ -34,4 +34,14 @@ public class GildedRoseTest {
 
         assertEquals(0, items[0].quality);
     }
+
+    @Test
+    public void should_return_quality_2_when_given_items_name_Backstage_passes_to_a_AFKAL80ETC_concert_and_sell_in_6_and_quality_0() {
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 6, 0)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(2, items[0].quality);
+    }
 }
