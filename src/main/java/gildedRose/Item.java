@@ -14,23 +14,27 @@ public class Item {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
-        if (this.name.equals("Aged Brie")) {
-            this.itemQualityStrategy = new AgedBrieItemQualityStrategy();
+        switch (this.name) {
+            case "Aged Brie":
+                this.itemQualityStrategy = new AgedBrieItemQualityStrategy();
+                break;
+            case "Backstage passes to a TAFKAL80ETC concert":
+                this.itemQualityStrategy = new BackstagePassesItemQualityStrategy();
+                break;
+            case "Sulfuras, Hand of Ragnaros":
+                this.itemQualityStrategy = new SulfurasItemQualityStrategy();
+                break;
+            default:
+                this.itemQualityStrategy = new DefaultItemQualityStrategy();
+                break;
         }
-        else if (this.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            this.itemQualityStrategy = new BackstagePassesItemQualityStrategy();
-        }
-        else if (this.name.equals("Sulfuras, Hand of Ragnaros")) {
-            this.itemQualityStrategy = new SulfurasItemQualityStrategy();
-        }
-        else this.itemQualityStrategy = new DefaultItemQualityStrategy();
     }
 
-    public int getQuality() {
+    int getQuality() {
         return quality;
     }
 
-    public void setQuality(int quality) {
+    void setQuality(int quality) {
         this.quality = quality;
     }
 
